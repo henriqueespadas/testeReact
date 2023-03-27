@@ -48,16 +48,16 @@ export const createUserAsync = createAsyncThunk('user/createUser', async (payloa
             ...payload,
             id: newUserId,
             address: {
-                street: '',
-                suite: '',
-                city: '',
-                zipcode: '',
-                number: 0,
+                ...payload.address,
+                street: payload.address.street,
+                city: payload.address.city,
+                zipcode: payload.address.zipcode,
+                number: payload.address.number,
                 geo: {
-                    lat: '',
-                    lng: ''
-                }
-            }
+                    lat: payload.address.geo.lat,
+                    long: payload.address.geo.long,
+                },
+            },
         };
 
         console.log("Payload antes de enviar para a API:", fullPayload);
@@ -68,7 +68,7 @@ export const createUserAsync = createAsyncThunk('user/createUser', async (payloa
 
         const createdUser: User = {
             ...fullPayload,
-            id: response.id || newUserId, // Modifique esta linha
+            id: response.id || newUserId,
             address: {
                 street: fullPayload.address.street,
                 city: fullPayload.address.city,
@@ -76,7 +76,7 @@ export const createUserAsync = createAsyncThunk('user/createUser', async (payloa
                 number: fullPayload.address.number,
                 geolocation: {
                     lat: fullPayload.address.geo.lat,
-                    long: fullPayload.address.geo.lng,
+                    long: fullPayload.address.geo.long,
                 },
             },
         };

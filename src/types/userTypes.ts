@@ -4,8 +4,8 @@ export interface User {
   email: string;
   password: string;
   name: {
-    firstName: string;
-    lastName: string;
+    firstname: string;
+    lastname: string;
   };
   address: {
     city: string;
@@ -25,17 +25,17 @@ export interface CreateUserPayload {
   email: string;
   password: string;
   name: {
-    firstName: string;
-    lastName: string;
+    firstname: string;
+    lastname: string;
   };
   address: {
     street: string;
-    suite: string;
+    number: number;
     city: string;
     zipcode: string;
     geo: {
       lat: string;
-      lng: string;
+      long: string;
     };
   };
   phone: string;
