@@ -1,3 +1,17 @@
+Desenvolver uma aplicação CRUD de Usuários em React utilizando a API https://fakestoreapi.com/docs.  
+
+(Obs. As informações não são salvas na API, somente utilize para simular as requisições) 
+Requisitos:
+• ReactJS 
+• Redux (Doc) 
+• Typescript 
+Telas: 
+• Lista de usuários 
+• Cadastro de usuário 
+• Edição de usuário 
+• Deletar usuário 
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
